@@ -1,12 +1,29 @@
-// Copyright Leon Freist
-// Author Leon Freist <freist@informatik.uni-freiburg.de>
-
+/************************************************************************************
+      
+ *                 Copyright (C) 2021 - 2023, Barca, Inc. 
+ 
+ *    Email: <opensource@barca.com>  GitHub: @BarcaWebCloud. 
+ *    Project: BSCAN to scanner MotherBoards. CPU, Memory Ram, SO and more
+ 
+ * This software is licensed as described in the file COPYING, which                    
+ * you should have received as part of this distribution. The terms                     
+ * are also available at https://project-barca.github.io/docs/copyright.html.           
+ *
+ * You may opt to use, copy, modify, merge, publish, distribute and/or sell             
+ * copies of the Software, and permit persons to whom the Software is                   
+ * furnished to do so, under the terms of the COPYING file.                             
+ *
+ * This software is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY            
+ * KIND, either express or implied.                                                      
+ *
+ **************************************************************************************/
 #pragma once
 
 #include <codecvt>
 #include <cstring>
 #include <locale>
 #include <string>
+#include <numeric>
 #include <vector>
 
 /**
@@ -173,3 +190,19 @@ inline bool starts_with(const string_type& str, const prefix_type& prefix) {
   return str.rfind(prefix, 0) == 0;
 #endif
 }
+
+/**
+ * Insert in the string
+ * @return
+ */
+struct between_string {
+  std::string sep;
+  between_string(const std::string& sep) : sep(sep) {}
+  std::string operator()(const std::string& lhs, const std::string& rhs) {
+    std::string rz(lhs);
+    if(!lhs.empty() && !rhs.empty())
+      rz += sep;
+    rz += rhs;
+    return rz;
+  }
+};

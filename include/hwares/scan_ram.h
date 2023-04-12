@@ -1,3 +1,22 @@
+/************************************************************************************
+      
+ *                 Copyright (C) 2021 - 2023, Barca, Inc. 
+ 
+ *    Email: <opensource@barca.com>  GitHub: @BarcaWebCloud. 
+ *    Project: BSCAN to scanner MotherBoards. CPU, Memory Ram, SO and more
+ 
+ * This software is licensed as described in the file COPYING, which                    
+ * you should have received as part of this distribution. The terms                     
+ * are also available at https://project-barca.github.io/docs/copyright.html.           
+ *
+ * You may opt to use, copy, modify, merge, publish, distribute and/or sell             
+ * copies of the Software, and permit persons to whom the Software is                   
+ * furnished to do so, under the terms of the COPYING file.                             
+ *
+ * This software is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY            
+ * KIND, either express or implied.                                                      
+ *
+ **************************************************************************************/
 #pragma once
 
 #include <string>
@@ -14,6 +33,8 @@ namespace bscan {
     std::string& name();
     std::string& model();
     std::string& serialNumber();
+    std::string& total();
+    std::string& free();
     int64_t totalSize_Bytes();
     int64_t availableMemory();
 
@@ -21,13 +42,17 @@ namespace bscan {
     static std::string getName();
     static std::string getModel();
     static std::string getSerialNumber();
+    static std::string getTotal();
+    static std::string getFree();
     static int64_t getTotalSize_Bytes();
-    static int64_t getAvailableMemory();
+    static int64_t getAvailableMemory_Bytes();
 
    private:
     std::string _vendor;
     std::string _name;
     std::string _model;
+    std::string _total;
+    std::string _free;
     std::string _serialNumber;
     int64_t _totalSize_Bytes = -1;
     int64_t _totalFreeSize_Bytes = -1;
