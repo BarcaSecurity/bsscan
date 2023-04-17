@@ -57,19 +57,19 @@ namespace bscan {
     return _hostname;
   }
 
-  std::string OS::domainname() {
-    if (_domainname.empty()) {
-      _domainname = getDomainName();
-    }
-    return _domainname;
-  }
+  // std::string OS::domainname() {
+  //   if (_domainname.empty()) {
+  //     _domainname = getDomainName();
+  //   }
+  //   return _domainname;
+  // }
 
-  std::string OS::uptime() {
-    if (_uptime.empty()) {
-      _uptime = getUptime();
-    }
-    return _uptime;
-  }
+  // std::string OS::uptime() {
+  //   if (_uptime.empty()) {
+  //     _uptime = getUptime();
+  //   }
+  //   return _uptime;
+  // }
 
   std::string OS::homedir() {
     if (_homedir.empty()) {
@@ -288,6 +288,13 @@ namespace bscan {
     return _productidentificationuuid;
   }
 
+  std::string OS::timez() {
+    if (_timez.empty()) {
+      _timez = getTimeZone();
+    }
+    return _timez;
+  }
+
   std::string OS::status() {
     if (_status.empty()) {
       _status = getStatus();
@@ -300,6 +307,27 @@ namespace bscan {
       _kernel = getKernel();
     }
     return _kernel;
+  }
+
+  int64_t OS::maxProcessMemory() {
+    if (_maxProcessMemory == -1) {
+      _maxProcessMemory = getMaxProcessMemory();
+    }
+    return _maxProcessMemory;
+  }
+
+  int64_t OS::users() {
+    if (_users == -1) {
+      _users = getUsers();
+    }
+    return _users;
+  }
+
+  int64_t OS::processes() {
+    if (_processes == -1) {
+      _processes = getProcesses();
+    }
+    return _processes;
   }
 
   bool OS::is32bit() const { return _32bit; }

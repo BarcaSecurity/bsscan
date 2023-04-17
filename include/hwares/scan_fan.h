@@ -24,70 +24,54 @@
 
 namespace bscan {
 
-  class GPU {
+  class FAN {
    public:
-    GPU() = default;
-    GPU(const std::string& vendor,
+    FAN() = default;
+    FAN(const std::string& description,
         const std::string& name,
-        const std::string& processor,
-        const std::string& driverVersion,
+        const std::string& pnpdeviceID,
         const std::string& deviceID,
         const std::string& status,
-        const std::string& modedescription,
-        const std::string& installedDriversPath,
-        int64_t architecture,
-        int64_t type,
-        int64_t mode,
+        const std::string& errorDescription,
+        int64_t desiredSpeed,
+        int64_t lastErrorCode,
         int64_t availability,
-        int64_t maxMemory,
-        int64_t memoryBytes);
-    ~GPU() = default;
+        int64_t statusInfo);
+    ~FAN() = default;
 
-    std::string& vendor();
+    std::string& description();
     std::string& name();
-    std::string& processor();
-    std::string& driverVersion();
+    std::string& pnpdeviceID();
     std::string& deviceID();
     std::string& status();
-    std::string& modedescription();
-    std::string& installedDriversPath();
-    int64_t architecture();
-    int64_t type();
-    int64_t mode();
+    std::string& errorDescription();
+    int64_t desiredSpeed();
+    int64_t lastErrorCode();
     int64_t availability();
-    int64_t memoryBytes();
-    int64_t maxMemory();
+    int64_t statusInfo();
 
-    static std::string getVendor();
+    static std::string getDescription();
     static std::string getName();
-    static std::string getProcessor();
-    static std::string getDriverVersion();
+    static std::string getPNPDeviceID();
     static std::string getDeviceID();
     static std::string getStatus();
-    static std::string getModeDescription();
-    static std::string getInstalledDriversPath();
-    static int64_t getType();
-    static int64_t getMode();
-    static int64_t getArchitecture();
+    static std::string getErrorDescription();
+    static int64_t getDesiredSpeed();
+    static int64_t getLastErrorCode();
     static int64_t getAvailability();
-    static int64_t getMaxMemory();
-    static int64_t getMemoryBytes();
+    static int64_t getStatusInfo();
 
    private:
-    std::string _vendor;
+    std::string _description;
     std::string _name;
-    std::string _processor;
-    std::string _driverVersion;
+    std::string _pnpdeviceID;
     std::string _deviceID;
     std::string _status;
-    std::string _modedescription;
-    std::string _installedDriversPath;
-    int64_t _architecture = -1;
-    int64_t _type = -1;
-    int64_t _mode = -1;
+    std::string _errorDescription;
+    int64_t _desiredSpeed = -1;
+    int64_t _lastErrorCode = -1;
     int64_t _availability = -1;
-    int64_t _memoryBytes = -1;
-    int64_t _maxMemory = -1;
+    int64_t _statusInfo = -1;
   };
 
 };

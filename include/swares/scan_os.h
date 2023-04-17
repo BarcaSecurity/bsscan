@@ -69,8 +69,12 @@ namespace bscan {
     std::string productidentificationversion();
     std::string pathsystemdriver();
     std::string productidentificationuuid();
+    std::string timez();
     std::string status();
     std::string kernel();
+    int64_t users();
+    int64_t processes();
+    int64_t maxProcessMemory();
     [[nodiscard]] bool is32bit() const;
     [[nodiscard]] bool is64bit() const;
     [[nodiscard]] bool isBigEndian() const;
@@ -116,8 +120,12 @@ namespace bscan {
     static std::string getProductIdentificationVersion();
     static std::string getPathSystemDriver();
     static std::string getProductIdentificationUUID();
+    static std::string getTimeZone();
     static std::string getStatus();
     static std::string getKernel();
+    static int64_t getUsers();
+    static int64_t getProcesses();
+    static int64_t getMaxProcessMemory();
     static bool getIs32bit();
     static bool getIs64bit();
     static bool getIsBigEndian();
@@ -164,8 +172,12 @@ namespace bscan {
     std::string _productidentificationversion;
     std::string _pathsystemdriver;
     std::string _productidentificationuuid;
+    std::string _timez;
     std::string _status;
     std::string _kernel;
+    int64_t _users;
+    int64_t _processes;
+    int64_t _maxProcessMemory;
     bool _32bit = false;
     bool _64bit = false;
     bool _bigEndian = false;
