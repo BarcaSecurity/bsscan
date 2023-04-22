@@ -27,47 +27,47 @@ namespace bsscan {
 class NET {
   friend std::vector<NET> getAllNetworkAdapters();
 
- public:
-  NET(
-    std::string& name, 
-    std::string& manufacturer,
-    std::string& permanentAddress,
-    std::string& dnsHostname,
-    std::string& serviceName,
-    std::string& driverPath,
-    std::string& status,
-    std::string& macAddress,
-    std::string& ipAddress,
-    std::string& subnet,
-    std::string& gateway
-  );
-  ~NET() = default;
+  public:
+    NET(
+      std::string& name, 
+      std::string& manufacturer,
+      std::string& permanentAddress,
+      std::string& dnsHostname,
+      std::string& serviceName,
+      std::string& driverPath,
+      std::string& status,
+      std::string& macAddress,
+      std::string& ipAddress,
+      std::string& subnet,
+      std::string& gateway
+    );
+    ~NET() = default;
 
-  [[nodiscard]] const std::string& name() const;
-  [[nodiscard]] const std::string& manufacturer() const;
-  [[nodiscard]] const std::string& permanentAddress() const;
-  [[nodiscard]] const std::string& dnsHostname() const;
-  [[nodiscard]] const std::string& serviceName() const;
-  [[nodiscard]] const std::string& driverPath() const;
-  [[nodiscard]] const std::string& status() const;
-  [[nodiscard]] const std::string& macAddress() const;
-  [[nodiscard]] const std::string& ipAddress() const;
-  [[nodiscard]] const std::string& subnet() const;
-  [[nodiscard]] const std::string& gateway() const;
+    [[nodiscard]] const std::string& name() const;
+    [[nodiscard]] const std::string& manufacturer() const;
+    [[nodiscard]] const std::string& permanentAddress() const;
+    [[nodiscard]] const std::string& dnsHostname() const;
+    [[nodiscard]] const std::string& serviceName() const;
+    [[nodiscard]] const std::string& driverPath() const;
+    [[nodiscard]] const std::string& status() const;
+    [[nodiscard]] const std::string& macAddress() const;
+    [[nodiscard]] const std::string& ipAddress() const;
+    [[nodiscard]] const std::string& subnet() const;
+    [[nodiscard]] const std::string& gateway() const;
   
- private:
-  NET() = default;
-  std::string _name;
-  std::string _manufacturer;
-  std::string _permanentAddress;
-  std::string _dnsHostname;
-  std::string _serviceName;
-  std::string _driverPath;
-  std::string _status;
-  std::string _macAddress;
-  std::string _ipAddress;
-  std::string _subnet;
-  std::string _gateway;
+  private:
+    NET() = default;
+    std::string _name;
+    std::string _manufacturer;
+    std::string _permanentAddress;
+    std::string _dnsHostname;
+    std::string _serviceName;
+    std::string _driverPath;
+    std::string _status;
+    std::string _macAddress;
+    std::string _ipAddress;
+    std::string _subnet;
+    std::string _gateway;
 };
 
 std::vector<NET> getAllNetworkAdapters();

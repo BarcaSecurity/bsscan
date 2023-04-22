@@ -278,10 +278,7 @@ endif()
 
 
 add_subdirectory(src/libs/info)
-
 add_executable(bsscan index.cpp "include/bsscan.h")
-
-add_library(sqlite3 "src/libs/sqlite3/sqlite3.c")
 
 if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
     ${CMAKE_CXX_COMPILER_VERSION} VERSION_GREATER_EQUAL "8" AND ${CMAKE_CXX_COMPILER_VERSION} VERSION_LESS "9.1") OR
