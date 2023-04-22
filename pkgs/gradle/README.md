@@ -1,2 +1,0 @@
-### Gradle JAVA/Kotlin
-
