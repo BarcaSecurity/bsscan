@@ -1,22 +1,30 @@
-# BSCAN v0.2.3-beta
+# BSSCAN v0.1.0
 
-**BSCAN** is a library cross-platform that provides information about the **hardwares** and **softwares** where to have a computing device & **atmospheric environment**. Enabling developers to utilize digitization capabilities in their Web and mobile applications with their preferred languages ​​such as: *Python, JavaScript/TypeScript, JAVA, Ruby, PHP, GO, Rust* and more.
+**BSSCAN** is a library cross-platform high performance that finds malware and spyware wherever on computers, smartphones or tablets. BSSCAN uses the best strategies to analyze device vulnerabilities.
 
-We can install **BSCAN** desktop version on *Windows, Linux & MacOS* systems.
+Build your own strategy for scanning services. Developers to utilize digitization capabilities in their Web and mobile applications with their preferred languages ​​such as: *Python, JavaScript/TypeScript, JAVA, Ruby, PHP, GO, Rust* and more.
+
+We can install **BSSCAN** desktop version on *Windows, Linux & MacOS* systems.
 
 <br>
 
-1. [Hardwares](/docs/hwares/intro.md) - get information about RAM, CPU, GPU, Disk, Motheboard, Monitors, USB Devices, Bluetooth, Wifi and more.
+1. [environment](/docs/environment/intro.md) - Find Environment Vulnerabilities.
 
-2. [Softwares](/docs/swares/intro.md) - get information about Operating System, Apps, User, Services, Databases, Office and more.
+2. [files](/docs/file/intro.md) - Find Files Vulnerabilities.
 
-3. [Atmosphere](/docs/atmosphere/intro.md) - get information about Troposphere, Stratosphere, Mesosphere, Thermosphere, Exosphere, Climate and more.
+3. [networks](/docs/network/intro.md) - get Find Networks Vulnerabilities.
+
+4. [datasource](/docs/datasource/intro.md) - Find Databases Vulnerabilities.
+
+5. [project](/docs/project/intro.md) - Find Project Vulnerabilities.
+
+6. [servers](/docs/server/intro.md) - Find Web Server Vulnerabilities.
 
 <br>
 
 ## Requirements
 
-It is necessary that you have installed the programs below to use **BSCAN** in developer mode.
+It is necessary that you have installed the programs below to use **BSSCAN** in developer mode.
 
 ### To Linux
 
@@ -68,7 +76,7 @@ It is necessary that you have installed the programs below to use **BSCAN** in d
 <br>
 <br>
 
-## Obtaining BScan
+## Obtaining BSScan
 
 <br>
 
@@ -78,8 +86,8 @@ View the [changelog](/CHANGELOG.md) for the latest updates and changes by versio
 
 ### Binary Downloads
 
-Binary downloads are available from the [BWC downloads](https://cloud.barca.com/downloads)
-page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/releases) page.
+Binary downloads are available from the [BS downloads](https://sec.barca.com/downloads)
+page or from each [GitHub Releases](https://github.com/BarcaSecurity/bsscan/releases) page.
 
 
 <br>
@@ -89,19 +97,19 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
 
 <br>
 
-**BSCAN** requires C++ version 17 or newer, the CMakelists requires GNU cmake.
+**BSSCAN** requires C++ version 17 or newer, the CMakelists requires GNU cmake.
 
   1. [Install Node.js](https://nodejs.org/) >=8.0.0 (16.11 recommended)
   2. [Install Python](https://www.python.org/downloads/) >=2.6.0 (3.9.0 recommended)
-  3. Clone the BScan repository:
+  3. Clone the BSScan repository:
     
       ```sh
-      git clone https://github.com/BarcaWebCloud/bscan.git
+      git clone https://github.com/BarcaSecurity/bsscan.git
       ```
 
 <br>
 
-## Build Executable BSCAN in Your Environment
+## Build Executable BSSCAN in Your Environment
 
 ### To Linux
 
@@ -110,10 +118,10 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
   1. Run `cmake CMakeLists.txt` from the source directory
 
       ```shell
-      cd bscan
+      cd bsscan
       cmake CMakeLists.txt
       ```
-  2. Now run `make all` or `make bscan` to compile the main program
+  2. Now run `make all` or `make bsscan` to compile the main program
 
 <br>
 
@@ -121,7 +129,7 @@ page or from each [GitHub Releases](https://github.com/BarcaWebCloud/bscan/relea
 
 <br>
 
-Check the **gcc** version of your System. BSCAN requires version greater than **17**.
+Check the **gcc** version of your System. BSSCAN requires version greater than **17**.
 We can view a list of *Makefile* generators with the command: `cmake -G`.
 Here shows an example to use the **MinGW** *Makefile* generator:
 
@@ -130,74 +138,20 @@ Here shows an example to use the **MinGW** *Makefile* generator:
   1. Run `cmake -G "MinGW Makefiles" <file-cmake>` from the source directory
 
       ```shell
-      cd bscan
+      cd bsscan
       cmake -G "MinGW Makefiles" CMakeLists.txt
       ```
   
   <br>
 
-  2. Now run `make all` or `make bscan` to compile the main program
-
-<br>
-
-## Build Module BSCAN Node.js in Your Environment
-
-<br>
-  
-  1. Install required `npm` packages 
-   
-
-      ```shell
-      npm install
-      ```
-<br>
-
-  1. Generate boilerplate in the root directory of bscan module
-
-
-      ```shell
-      node-gyp configure
-
-      ```
-<br>
-  
-  1. Now to build bscan native we will need to run the command to generates a **DLL** file with `.node` extension. This file will be placed inside **build/Release** directory
-
-
-      ```shell
-      node-gyp build
-      ```
-
-<br>
-
-## Getting Started
-
-<br>
-
-Create a **javascript** file to call the module
-
-
-```js
-// main.js
-const bscan = require("./build/Release/bscan.node");
-
-console.log(bscan.info())
-```
-
-<br>
-
-Now run the program
-
-```shell
-   node main.js
-```
+  2. Now run `make all` or `make bsscan` to compile the main program
 
 <br>
 <br>
 
 ## Documentation
 
-[Latest Release Documentation](https://cloud.barca.com/docs/bscan/latest/)
+[Latest Release Documentation](https://sec.barca.com/docs/bsscan/latest/)
 
 For documentation on the latest development code see the [documentation index](/docs).
 
@@ -207,7 +161,7 @@ For documentation on the latest development code see the [documentation index](/
 
 There are many ways to contribute:
 
-- Fix and [report bugs](https://github.com//BarcaWebCloud/bscan/issues/new)
-- [Review code and feature proposals](https://github.com/BarcaWebCloud/bscan/pulls)
+- Fix and [report bugs](https://github.com//BarcaSecurity/bsscan/issues/new)
+- [Review code and feature proposals](https://github.com/BarcaSecurity/bsscan/pulls)
 - Answer questions and discuss here on github and on the [Community Site](https://opensource.barca.com/)
 - [Contribute plugins](CONTRIBUTING.md)

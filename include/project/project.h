@@ -19,6 +19,6 @@
  **************************************************************************************/
 #pragma once
 
-#include "project/scan_app_web.h"
-#include "project/scan_app_mobile.h"
-#include "project/scan_app_desktop.h"
+//#include "project/scan_app_web.h"
+//#include "project/scan_app_mobile.h"
+//#include "project/scan_app_desktop.h"

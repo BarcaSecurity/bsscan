@@ -19,8 +19,8 @@
  **************************************************************************************/
 #pragma once
 
-#include "database/scan_mysql.h"
-#include "database/scan_mongodb.h"
-#include "database/scan_postgresql.h"
-#include "database/scan_oracle.h"
-#include "database/scan_mss.h"
+//#include "database/scan_mysql.h"
+//#include "database/scan_mongodb.h"
+//#include "database/scan_postgresql.h"
+//#include "database/scan_oracle.h"
+//#include "database/scan_mss.h"

@@ -23,14 +23,12 @@
 #include "WMIwrapper.h"
 #include "network/scan_adapters.h"
 #include "utils/stringutils.h"
-
 #include <windows.h>
-
 #include <stdio.h>
-
 #include <wbemidl.h>
 #pragma comment(lib,"wbemuuid")
 #include <iostream>
+
 using namespace std;
 
 namespace bsscan {
@@ -95,7 +93,7 @@ std::vector<NET> getAllNetworkAdapters() {
               std::vector<std::string> val = split(mychar, delimiter);
               net_name = val[1].c_str();
 
-              nets.push_back(Net());
+              nets.push_back(NET());
               nets.back()._name = net_name;
           }
           // default gateway (Router)
