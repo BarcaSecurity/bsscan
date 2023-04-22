@@ -17,10 +17,10 @@
  * KIND, either express or implied.                                                      
  *
  **************************************************************************************/
-#include "swares/scan_datasource.h"
+#include "datasource/scan_datasource.h"
 #include <string>
 
-namespace bscan {
+namespace bsscan {
   Datasource::Datasource(){};
   // TO POSTGRESQL
   std::string Datasource::postgresqldatabases() {

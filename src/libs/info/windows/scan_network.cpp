@@ -18,10 +18,10 @@
  *
  **************************************************************************************/
 #include "platform.h"
-#ifdef BSCAN_WINDOWS
+#ifdef BSSCAN_WINDOWS
 #include <filesystem>
 #include "WMIwrapper.h"
-#include "hwares/scan_net.h"
+#include "network/scan_adapters.h"
 #include "utils/stringutils.h"
 
 #include <windows.h>
@@ -33,7 +33,7 @@
 #include <iostream>
 using namespace std;
 
-namespace bscan {
+namespace bsscan {
 
 char* BSTRtoChar(BSTR String) {
     int n, i;
@@ -47,8 +47,8 @@ char* BSTRtoChar(BSTR String) {
     FinalChar[i] = 0;
     return FinalChar;
 }
-std::vector<Net> getAllNets() {
-  std::vector<Net> nets;
+std::vector<NET> getAllNetworkAdapters() {
+  std::vector<NET> nets;
   std::vector<const wchar_t*> res{};
 
   int n, i;
@@ -196,4 +196,4 @@ std::vector<Net> getAllNets() {
 
 };
 
-#endif  // END BSCAN_WINDOWS
+#endif  // END BSSCAN_WINDOWS

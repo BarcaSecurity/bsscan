@@ -20,7 +20,7 @@
 #include "network/scan_adapters.h"
 #include "utils/stringutils.h"
 
-namespace bscan {
+namespace bsscan {
 
 	NET::NET(
 		std::string& name,
