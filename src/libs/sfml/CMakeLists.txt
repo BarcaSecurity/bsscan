@@ -1,4 +1,35 @@
 add_library(SFml
+    # WINDOW
+    # TO DEFAULT
+    window/clipboard_impl.hpp
+    window/clipboard.cpp
+    window/context.cpp
+    window/cursor_impl.hpp
+    window/cursor.cpp
+    window/EGL_check.cpp
+    window/EGL_check.hpp
+    window/EGL_context.cpp
+    window/EGL_context.hpp
+    window/gl_context.cpp
+    window/gl_context.hpp
+    window/gl_resource.cpp
+    window/input_impl.hpp
+    window/joystick_impl.hpp
+    window/joystick_manager.cpp
+    window/joystick_manager.hpp
+    window/joystick.cpp
+    window/keyboard.cpp
+    window/mouse.cpp
+    window/sensor_impl.hpp
+    window/sensor_manager.cpp
+    window/sensor_manager.hpp
+    window/sensor.cpp
+    window/touch.cpp
+    window/video_mode_impl.hpp
+    window/video_mode.cpp
+    window/window_impl.cpp
+    window/window_impl.hpp
+    window/window.cpp
     # AUDIO
     audio/AL_check.cpp
     audio/AL_check.cpp
