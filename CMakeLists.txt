@@ -278,6 +278,7 @@ endif()
 
 
 add_subdirectory(src/libs/info)
+add_subdirectory(src/libs/sfml)
 add_executable(bsscan index.cpp "include/bsscan.h")
 
 if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
@@ -287,4 +288,4 @@ if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
     target_link_libraries(BSScan PUBLIC "stdc++fs")
 endif()
 
-target_link_libraries(bsscan PUBLIC bsscan::BSScan)
+target_link_libraries(bsscan PUBLIC bsscan::BSScan bsscan::SFml)
