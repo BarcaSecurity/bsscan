@@ -28,6 +28,44 @@ add_library(SFml
     audio/sound_source.cpp
     audio/sound_stream.cpp
     audio/sound.cpp
+    # GRAPHICS
+    graphics/blend_mode.cpp
+    graphics/circle_shape.cpp
+    graphics/font.cpp
+    graphics/GL_check.cpp
+    graphics/GL_check.hpp
+    graphics/GL_extensions.cpp
+    graphics/GL_extensions.hpp
+    graphics/GL_loader.cpp
+    graphics/GL_loader.hpp
+    graphics/glsl.cpp
+    graphics/image_loader.cpp
+    graphics/image_loader.hpp
+    graphics/image.cpp
+    graphics/rectangle_shape.cpp
+    graphics/render_states.cpp
+    graphics/render_target.cpp
+    graphics/render_texture_impl_default.cpp
+    graphics/render_texture_impl_default.hpp
+    graphics/render_texture_impl.cpp
+    graphics/render_texture_impl.hpp
+    graphics/render_texture_implFBO.cpp
+    graphics/render_texture_implFBO.hpp
+    graphics/render_texture.cpp
+    graphics/render_window.cpp
+    graphics/shader.cpp
+    graphics/shape.cpp
+    graphics/sprite.cpp
+    graphics/text.cpp
+    graphics/texture_saver.cpp
+    graphics/texture_saver.hpp
+    graphics/texture.cpp
+    graphics/transform.cpp
+    graphics/transformable.cpp
+    graphics/vertex_array.cpp
+    graphics/vertex_buffer.cpp
+    graphics/vertex.cpp
+    graphics/view.cpp
     # NETWORK
     # TO UNIX
     network/unix/socket_impl.cpp
