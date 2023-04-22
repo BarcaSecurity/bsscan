@@ -1,13 +1,13 @@
 /************************************************************************************
-
+      
  *                 Copyright (C) 2021 - 2023, Barca, Inc. 
  
- *    Email: <opensource@barca.com>  GitHub: @BarcaWebCloud. 
- *    Project: BSCAN to scanner MotherBoards. CPU, Memory Ram, SO and more
+ *    Email: <opensource@barca.com>  GitHub: @BarcaSecurity. 
+ *    Project: BSSCAN to find vulnerabilities on servers, files, network and more
  
  * This software is licensed as described in the file COPYING, which                    
  * you should have received as part of this distribution. The terms                     
- * are also available at https://project-barca.github.io/docs/copyright.html.           
+ * are also available at https://BarcaCorporation.github.io/docs/copyright.html.           
  *
  * You may opt to use, copy, modify, merge, publish, distribute and/or sell             
  * copies of the Software, and permit persons to whom the Software is                   
@@ -19,7 +19,7 @@
  **************************************************************************************/
 #include "platform.h"
 
-#ifdef BSCAN_WINDOWS
+#ifdef BSSCAN_WINDOWS
 #include <Windows.h>
 #include <winternl.h>
 #include <iostream>
@@ -43,7 +43,7 @@
 #define STATUS_SUCCESS 0x00000000
 
 
-#include "swares/scan_datasource.h"
+#include "datasource/scan_datasource.h"
 #include "utils/directory.h"
 #include "config.h"
 #include "utils/string.h"
@@ -53,7 +53,6 @@
 #include "utils/rapidjson/writer.h"
 #include "utils/rapidjson/ostreamwrapper.h"
 
-// #include "utils/subprocess.h"
 #include "config.h"
 
 using namespace std;
@@ -63,7 +62,7 @@ namespace fs = std::filesystem;
 
 
 
-namespace bscan {
+namespace bsscan {
   // TO POSTGRESQL
   std::string Datasource::getPostgresqlDatabases() {
     SetConsoleCP(1252);
@@ -78,7 +77,7 @@ namespace bscan {
     SetConsoleOutputCP(1252);
     // generator file model from apps installed in format json
     ofstream installed_default;
-    installed_default.open(std::string(getenv("USERPROFILE")) + "\\AppData\\Local\\Temp\\bscanjhkyo\\default-installed.json");
+    installed_default.open(std::string(getenv("USERPROFILE")) + "\\AppData\\Local\\Temp\\bsscanjhkyo\\default-installed.json");
     installed_default << "{\n  \"architecture\": \"\",\n  \"fullName\": \"\",\n  \"fullVersion\": \"\",\n  \"dateInstall\": \"\",\n  \"versionMajor\": \"\",\n  \"versionMinor\": \"\",\n  \"installDate\": \"\",\n  \"urlHelp\": \"\",\n  \"urlAbout\": \"\",\n  \"urlUpdate\": \"\",\n  \"urlUninstall\": \"\",\n  \"company\": \"\",\n  \"phone\": \"\",\n  \"contact\": \"\",\n  \"location\": \"\",\n  \"origin\": \"\",\n  \"size\": \"\",\n  \"readme\": \"\"\n}";
     installed_default.close();
     // define path to packages local
@@ -137,7 +136,7 @@ namespace bscan {
     // sets the path to where the default json file is
     char path_d[300] = "";
     strcat(path_d, getenv("USERPROFILE"));
-    strcat(path_d, "\\AppData\\Local\\Temp\\bscanjhkyo\\default-installed.json");
+    strcat(path_d, "\\AppData\\Local\\Temp\\bsscanjhkyo\\default-installed.json");
 
     // read model file json to list apps installed    
     FILE* fp = fopen(path_d, "rb"); // non-Windows use "r"
@@ -258,19 +257,8 @@ namespace bscan {
     return std::string("dad");
 
   };
-// https://en.cppreference.com/w/cpp/filesystem/exists
-// https://i.stack.imgur.com/9PDzx.png
-  //https://learn.microsoft.com/pt-br/windows/win32/cimwin32prov/win32-account
-// https://learn.microsoft.com/pt-br/windows/win32/cimwin32prov/win32-baseboard
-// https://www.intel.com/content/www/us/en/support/articles/000025060/intel-nuc.html
-// https://powershell.one/wmi/root/cimv2/win32_baseboard
-  // https://theitbros.com/how-to-get-list-of-installed-programs-in-windows-10/
 
-  // https://support.ptc.com/help/thingworx_hc/thingworx_8_hc/en/index.html#page/ThingWorx/Help/Installation/Installation/install_and_configure_postgresql_windows.html
   std::string Datasource::getPostgresqlProfiles() {
-
-
-
     return "profiles";
   }
 
@@ -305,4 +293,4 @@ namespace bscan {
   // TO REDIS
 };
 
-#endif  // END BSCAN_WINDOWS
+#endif  // END BSSCAN_WINDOWS
