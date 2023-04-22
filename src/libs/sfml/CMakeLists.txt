@@ -66,6 +66,46 @@ add_library(SFml
     graphics/vertex_buffer.cpp
     graphics/vertex.cpp
     graphics/view.cpp
+    # SYSTEM
+    # TO ANDROID
+    system/android/activity.cpp
+    system/android/activity.hpp
+    system/android/native_activity.cpp
+    system/android/resource_stream.cpp
+    system/android/resource_stream.hpp
+    # TO UNIX
+    system/unix/clock_impl.cpp
+    system/unix/clock_impl.hpp
+    system/unix/mutex_impl.cpp
+    system/unix/mutex_impl.hpp
+    system/unix/sleep_impl.cpp
+    system/unix/sleep_impl.hpp
+    system/unix/thread_impl.cpp
+    system/unix/thread_impl.hpp
+    system/unix/thread_local_impl.cpp
+    system/unix/thread_local_impl.hpp
+    # TO WINDOWS
+    system/windows/clock_impl.cpp
+    system/windows/clock_impl.hpp
+    system/windows/mutex_impl.cpp
+    system/windows/mutex_impl.hpp
+    system/windows/sleep_impl.cpp
+    system/windows/sleep_impl.hpp
+    system/windows/thread_impl.cpp
+    system/windows/thread_impl.hpp
+    system/windows/thread_local_impl.cpp
+    system/windows/thread_local_impl.hpp
+    # DEFAULT
+    system/clock.cpp
+    system/err.cpp
+    system/file_input_stream.cpp
+    system/lock.cpp
+    system/memory_input_stream.cpp
+    system/mutex.cpp
+    system/sleep.cpp
+    system/string.cpp
+    system/thread_local.cpp
+    system/time.cpp
     # NETWORK
     # TO UNIX
     network/unix/socket_impl.cpp
