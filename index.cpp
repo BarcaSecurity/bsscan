@@ -18,11 +18,48 @@
  *
  **************************************************************************************/
 #include <iostream> 
-#include "bscan.h"
+#include "bsscan.h"
+#include <iomanip>
+#include <stdio.h>
+#include <wbemidl.h>
+#pragma comment(lib,"wbemuuid")
+
+using namespace std;
 
 int main() { 
-  bscan::CPU cpu;
-	std::cout << "In Development..." << std::endl;
+  
+  bsscan::NET;
+  std::vector<bsscan::NET> nets = bsscan::getAllNetworkAdapters();
+  std::cout << "--------------------------------- Nets -----------------------------------" << std::endl;
+  if (!nets.empty()) {
+    int net_counter = 0;
+    for (const auto &net: nets) {
+      std::cout << "Net " << net_counter++ << ":" << std::endl;
+      std::cout << std::left << std::setw(20) << "  name: ";
+      std::cout << net.name() << std::endl;
+      std::cout << std::left << std::setw(20) << "  manufacturer: ";
+      std::cout << net.manufacturer() << std::endl;
+      std::cout << std::left << std::setw(20) << "  IP Address: ";
+      std::cout << net.ipAddress() << std::endl;
+      std::cout << std::left << std::setw(20) << "  Subnet: ";
+      std::cout << net.subnet() << std::endl;
+      std::cout << std::left << std::setw(20) << "  MAC Address: ";
+      std::cout << net.macAddress() << std::endl;
+      std::cout << std::left << std::setw(20) << "  DNS Hostname: ";
+      std::cout << net.dnsHostname() << std::endl;
+      std::cout << std::left << std::setw(20) << "  Gateway: ";
+      std::cout << net.gateway() << std::endl;
+      std::cout << std::left << std::setw(20) << "  Service Name: ";
+      std::cout << net.serviceName() << std::endl;
+      std::cout << std::left << std::setw(20) << "  DriverPath: ";
+      std::cout << net.driverPath() << std::endl;
 
-  std::cout << cpu.vendor() << std::endl;
+    }
+    std::cout << "---------------------------------------------------------------------------" << std::endl;
+  }
+  else {
+    std::cout << "No Network Adapter installed or detected" << std::endl;
+  }
+
+
 }
