@@ -19,5 +19,5 @@
  **************************************************************************************/
 #pragma once
 
-//#include "network/scan_wifi.h"
 #include "network/scan_adapters.h"
+
