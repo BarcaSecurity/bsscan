@@ -272,14 +272,16 @@ find_path(_check_include
 if(_check_include)
     message(STATUS "OK check all files in include directory")
     include_directories(${PROJECT_SOURCE_DIR}/include/)
+    
 else()
     message(WARNING "NOT There was a problem trying to include the header files. There must be some file missing! \nFiles in include path: ${_check_include}")
 endif()
 
 
 add_subdirectory(src/libs/info)
-add_subdirectory(src/libs/sfml)
+
 add_executable(bsscan index.cpp "include/bsscan.h")
+
 
 if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
     ${CMAKE_CXX_COMPILER_VERSION} VERSION_GREATER_EQUAL "8" AND ${CMAKE_CXX_COMPILER_VERSION} VERSION_LESS "9.1") OR
@@ -288,4 +290,58 @@ if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
     target_link_libraries(BSScan PUBLIC "stdc++fs")
 endif()
 
-target_link_libraries(bsscan PUBLIC bsscan::BSScan bsscan::SFml)
+# SFML
+target_link_libraries(bsscan PRIVATE 
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/flac.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/freetype.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/ogg.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/openal32.lib
+  # AUDIO
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio-d.lib
+  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio-d.pdb
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio-s-d.lib
+  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio-s-d.pdb
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio-s.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio.lib
+  # GRAPHICS
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-graphics-d.lib
+  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-graphics-d.pdb
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-graphics-s-d.lib
+  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-graphics-s-d.pdb
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-graphics-s.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-graphics.lib
+  # MAIN
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-main-d.lib
+  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-main-s-d.pdb
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-main.lib
+  # NETWORK
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network-d.lib
+  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network-d.pdb
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network-s-d.lib
+  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network-s-d.pdb
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network-s.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network.lib
+  # SYSTEM
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system-d.lib
+  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system-d.pdb
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system-s-d.lib
+  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system-s-d.pdb
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system-s.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system.lib
+  # WINDOW
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-window-d.lib
+  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-window-d.pdb
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-window-s-d.lib
+  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-window-s-d.pdb
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-window-s.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-window.lib
+  # VORBIS
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/vorbis.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/vorbisenc.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/vorbisfile.lib
+  )
+
+
+#target_link_libraries(bsscan PUBLIC bsscan::BSScan bsscan::SFml)
+target_link_libraries(bsscan PUBLIC bsscan::BSScan)
+
