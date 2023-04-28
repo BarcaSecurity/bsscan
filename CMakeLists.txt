@@ -22,7 +22,7 @@
 # Barca, Inc., Vitória/ES, BRA |  email: opensource@barca.com  | GitHub: @BarcaSecurity
 
 cmake_minimum_required(VERSION 3.16)
-project(bsscan VERSION 0.1.0 DESCRIPTION "A Library To Find Web Server Vulnerabilities, WIFI Network Security, Malware Detection, Vulnerability Scanning, Security Patches on OS and Network Vulnerability Detection" HOMEPAGE_URL "https://sec.barca.com/overview/modules/bsscan" LANGUAGES CXX C)
+project(bsscan VERSION 0.1.1 DESCRIPTION "A Library To Find Web Server Vulnerabilities, WIFI Network Security, Malware Detection, Vulnerability Scanning, Security Patches on OS and Network Vulnerability Detection" HOMEPAGE_URL "https://sec.barca.com/overview/modules/bsscan" LANGUAGES CXX C)
 
 message(STATUS "cmake version ${CMAKE_VERSION}\n\nproject: ${PROJECT_NAME}\nversion: ${PROJECT_VERSION}\ndescription: ${PROJECT_DESCRIPTION}\n${PROJECT_NAME}-api: https://api.bwc-${PROJECT_NAME}.com/v${PROJECT_VERSION_MAJOR}/")
 
