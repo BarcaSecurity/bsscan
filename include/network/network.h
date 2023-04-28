@@ -20,4 +20,5 @@
 #pragma once
 
 #include "network/scan_adapters.h"
+#include "network/scan_port.h"
 
