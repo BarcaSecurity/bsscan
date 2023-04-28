@@ -1,4 +1,31 @@
-# BSSCAN v0.1.0
+# BSSCAN v0.1.1
+
+<br>
+
+<p align="center">
+ <img width="100px" src="https://raw.githubusercontent.com/BarcaCorporation/community/main/static/security/bsscan/logos/2023/barca-bsscan-module-logo.png" align="center" alt="GitHub Readme Stats" />
+ <h2 align="center">BSSCAN</h2>
+ <p align="center">
+     High Performance That Finds Malware and Spyware Wherever on Computers, Smartphones or Tablets</p>
+ </p>
+  <p align="center">
+    <a href="https://github.com/BarcaSecurity/github-readme-stats/actions">
+      <img alt="GitHub issues" src="https://img.shields.io/github/issues/BarcaSecurity/bsscan">
+    </a>
+    <a href="https://codecov.io/gh/BarcaSecurity/github-readme-stats">
+      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/BarcaSecurity/bsscan">
+    </a>
+    <a href="https://a.paddle.com/v2/click/16413/119403?link=1227">
+      <img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/BarcaSecurity/bsscan">
+    </a>
+    <a href="https://a.paddle.com/v2/click/16413/119403?link=2345">
+      <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/BarcaSecurity/bsscan">
+    </a>
+  </p>
+
+</p>
+
+<br>
 
 **BSSCAN** is a library cross-platform high performance that finds malware and spyware wherever on computers, smartphones or tablets. BSSCAN uses the best strategies to analyze device vulnerabilities.
 
