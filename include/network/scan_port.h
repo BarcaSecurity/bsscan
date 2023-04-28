@@ -2,12 +2,12 @@
       
  *                 Copyright (C) 2021 - 2023, Barca, Inc. 
  
- *    Email: <opensource@barca.com>  GitHub: @BarcaWebCloud. 
- *    Project: BSCAN to scanner MotherBoards. CPU, Memory Ram, SO and more
+ *    Email: <opensource@barca.com>  GitHub: @BarcaSecurity. 
+ *    Project: BSSCAN to find vulnerabilities on servers, files, network and more
  
  * This software is licensed as described in the file COPYING, which                    
  * you should have received as part of this distribution. The terms                     
- * are also available at https://project-barca.github.io/docs/copyright.html.           
+ * are also available at https://BarcaCorporation.github.io/docs/copyright.html.           
  *
  * You may opt to use, copy, modify, merge, publish, distribute and/or sell             
  * copies of the Software, and permit persons to whom the Software is                   
@@ -28,14 +28,14 @@ namespace bsscan {
    public:
     PORT() = default;
     PORT(const std::string& status,
-        const std::string& service)
+        const std::string& service);
     ~PORT() = default;
 
-    std::string& status();
-    std::string& service();
+    std::string& status(int port);
+    std::string& service(int port);
   
-    static std::string getStatus();
-    static std::string getService();
+    static std::string getStatus(int port);
+    static std::string getService(int port);
 
    private:
     std::string _status;
