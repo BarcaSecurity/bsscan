@@ -20,8 +20,7 @@
 #pragma once
 #include "platform.h"
 
-
-#ifdef BSCAN_WINDOWS
+#ifdef BSSCAN_WINDOWS
   #include <iostream>
   #include <SFML/Network.hpp>
   #include <sstream>
@@ -31,12 +30,18 @@
 	
 	using namespace std;
 
-
   static bool port_is_open(const std::string& address, int port) {
     return (sf::TcpSocket().connect(address, port) == sf::Socket::Done);
   }
 
-  static std::vector<std::string> split(const std::string& string, char delimiter = ' ', bool allow_empty = false) {
+  template <typename T>
+  static void SWAP(T& a, T& b) {
+    T c = a;
+    a = b;
+    b = c;
+  };
+  
+  static std::vector<std::string> split_seq(const std::string& string, char delimiter = ' ', bool allow_empty = false) {
     std::vector<std::string> tokens;
     std::stringstream sstream(string);
     std::string token;
@@ -48,28 +53,21 @@
   }
 
   template <typename T>
-  static void swap(T& a, T& b) {
-    T c = a;
-    a = b;
-    b = c;
-  }
-
-  template <typename T>
   static std::vector<T> range(T min, T max) {
     if (min > max)
-      swap(min, max);
+      SWAP(min, max);
     if (min == max)
       return std::vector<T>(1, min);
     std::vector<T> values;
     for (; min <= max; ++min)
       values.push_back(min);
     return values;
-  }
+  };
 
   static std::vector<int> ports_list(const std::string& list) {
     std::vector<int> ports;
-    for (const std::string& token : split(list, ',')) {
-      std::vector<std::string> strrange = split(token, '-');
+    for (const std::string& token : split_seq(list, ',')) {
+      std::vector<std::string> strrange = split_seq(token, '-');
       switch (strrange.size()) {
         case 0: ports.push_back(string_to_int(token));       break;
         case 1: ports.push_back(string_to_int(strrange[0])); break;
@@ -85,7 +83,7 @@
       }
     }
     return ports;
-  }
+  };
 
 
 
