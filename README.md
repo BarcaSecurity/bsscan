@@ -93,6 +93,37 @@ page or from each [GitHub Releases](https://github.com/BarcaSecurity/bsscan/rele
 <br>
 <br>
 
+## Implementing an [SFML](https://www.sfml-dev.org/) library in the project
+
+Now we need to [download](https://www.sfml-dev.org/download/sfml/2.5.1/) the library and move the necessary **.dll** files to the project and insert them in the debug folder to link.
+
+<br>
+
+Here we're creating a new `sf::TcpSocket`, connecting to the address and port and then returning `true` or `false` depending on whether the connection succeeded. We get rid of the unneeded explicit `sf::IpAddress` constructor call as well as the call to `sf::TcpSocket::disconnect()`. We can use the function in a program like this:
+
+<br>
+
+```c++
+#include <iostream>
+#include <SFML/Network.hpp>
+#include <string>
+
+static bool port_is_open(const std::string& address, int port) {
+  return (sf::TcpSocket().connect(address, port) == sf::Socket::Done);
+}
+
+int main() {
+  std::cout << "PORT 22: ";
+  if (port_is_open("localhost", 22))
+      std::cout << "OPEN" << std::endl;
+  else
+      std::cout << "CLOSED" << std::endl;
+  return 0;
+}
+```
+
+<br>
+
 ## Build From Source
 
 <br>

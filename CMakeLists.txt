@@ -22,7 +22,7 @@
 # Barca, Inc., Vitória/ES, BRA |  email: opensource@barca.com  | GitHub: @BarcaSecurity
 
 cmake_minimum_required(VERSION 3.16)
-project(bsscan VERSION 0.1.0 DESCRIPTION "A Library To Find Web Server Vulnerabilities, WIFI Network Security, Malware Detection, Vulnerability Scanning, Security Patches on OS and Network Vulnerability Detection" HOMEPAGE_URL "https://sec.barca.com/overview/modules/bsscan" LANGUAGES CXX C)
+project(bsscan VERSION 0.1.1 DESCRIPTION "A Library To Find Web Server Vulnerabilities, WIFI Network Security, Malware Detection, Vulnerability Scanning, Security Patches on OS and Network Vulnerability Detection" HOMEPAGE_URL "https://sec.barca.com/overview/modules/bsscan" LANGUAGES CXX C)
 
 message(STATUS "cmake version ${CMAKE_VERSION}\n\nproject: ${PROJECT_NAME}\nversion: ${PROJECT_VERSION}\ndescription: ${PROJECT_DESCRIPTION}\n${PROJECT_NAME}-api: https://api.bwc-${PROJECT_NAME}.com/v${PROJECT_VERSION_MAJOR}/")
 
@@ -252,6 +252,7 @@ find_path(_check_include
             "utils/directory.h",
             "utils/string.h",
             "utils/stringutils.h",
+            "utils/netutils.h",
             "utils/subprocess.h",
             # file header
             "file/file.h",
@@ -262,6 +263,7 @@ find_path(_check_include
             # network header
             "network/network.h",
             "network/scan_adapters.h",
+            "network/scan_port.h",
             # datasource header
             "datasource/datasource.h",
             # environment header
@@ -272,13 +274,16 @@ find_path(_check_include
 if(_check_include)
     message(STATUS "OK check all files in include directory")
     include_directories(${PROJECT_SOURCE_DIR}/include/)
+    
 else()
     message(WARNING "NOT There was a problem trying to include the header files. There must be some file missing! \nFiles in include path: ${_check_include}")
 endif()
 
 
 add_subdirectory(src/libs/info)
+
 add_executable(bsscan index.cpp "include/bsscan.h")
+
 
 if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
     ${CMAKE_CXX_COMPILER_VERSION} VERSION_GREATER_EQUAL "8" AND ${CMAKE_CXX_COMPILER_VERSION} VERSION_LESS "9.1") OR
@@ -287,4 +292,38 @@ if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
     target_link_libraries(BSScan PUBLIC "stdc++fs")
 endif()
 
+# SFML
+target_link_libraries(bsscan PRIVATE 
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/flac.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/freetype.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/ogg.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/openal32.lib
+  # AUDIO
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio-d.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio-s-d.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio-s.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio.lib
+  # MAIN
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-main-d.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-main.lib
+  # NETWORK
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network-d.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network-s-d.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network-s.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network.lib
+  # SYSTEM
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system-d.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system-s-d.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system-s.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system.lib
+  # WINDOW
+  # VORBIS
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/vorbis.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/vorbisenc.lib
+  ${PROJECT_SOURCE_DIR}/src/libs/sfml/vorbisfile.lib
+  )
+
+
+#target_link_libraries(bsscan PUBLIC bsscan::BSScan bsscan::SFml)
 target_link_libraries(bsscan PUBLIC bsscan::BSScan)
+

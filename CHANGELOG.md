@@ -2,11 +2,20 @@
 
 # Changelog
 
-## v0.1.0-BETA
+## v0.1.1-BETA
 
 ### BSScan
 
 This is the latest version introduces the use of the module and its features.
+
+
+<br>
+
+## v0.1.1 [2023-04-28]
+
+### Features
+
+- [#6](https://github.com/BarcaSecurity/bsscan/pull/6): Scanner Ports. Gratitude @ahsouza!
 
 
 <br>

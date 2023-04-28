@@ -20,7 +20,7 @@
 #pragma once
 #include "platform.h"
 #include <stdio.h>
-#ifdef BSCAN_WINDOWS
+#ifdef BSSCAN_WINDOWS
 #include <direct.h>
 #define getDir _getcwd
 #else

@@ -21,7 +21,7 @@
 #include "platform.h"
 #include <random>
 
-#ifdef BSCAN_WINDOWS
+#ifdef BSSCAN_WINDOWS
   #include<iostream>
 	
 	using namespace std;
