@@ -263,6 +263,7 @@ find_path(_check_include
             # network header
             "network/network.h",
             "network/scan_adapters.h",
+            "network/scan_port.h",
             # datasource header
             "datasource/datasource.h",
             # environment header
