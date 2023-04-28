@@ -252,6 +252,7 @@ find_path(_check_include
             "utils/directory.h",
             "utils/string.h",
             "utils/stringutils.h",
+            "utils/netutils.h",
             "utils/subprocess.h",
             # file header
             "file/file.h",
@@ -298,43 +299,23 @@ target_link_libraries(bsscan PRIVATE
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/openal32.lib
   # AUDIO
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio-d.lib
-  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio-d.pdb
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio-s-d.lib
-  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio-s-d.pdb
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio-s.lib
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-audio.lib
-  # GRAPHICS
-  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-graphics-d.lib
-  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-graphics-d.pdb
-  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-graphics-s-d.lib
-  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-graphics-s-d.pdb
-  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-graphics-s.lib
-  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-graphics.lib
   # MAIN
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-main-d.lib
-  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-main-s-d.pdb
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-main.lib
   # NETWORK
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network-d.lib
-  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network-d.pdb
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network-s-d.lib
-  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network-s-d.pdb
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network-s.lib
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-network.lib
   # SYSTEM
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system-d.lib
-  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system-d.pdb
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system-s-d.lib
-  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system-s-d.pdb
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system-s.lib
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-system.lib
   # WINDOW
-  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-window-d.lib
-  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-window-d.pdb
-  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-window-s-d.lib
-  #${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-window-s-d.pdb
-  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-window-s.lib
-  ${PROJECT_SOURCE_DIR}/src/libs/sfml/sfml-window.lib
   # VORBIS
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/vorbis.lib
   ${PROJECT_SOURCE_DIR}/src/libs/sfml/vorbisenc.lib
