@@ -15,7 +15,16 @@ This is the latest version introduces the use of the module and its features.
 
 ### Features
 
-- [#6](https://github.com/BarcaSecurity/bsscan/pull/6): Scanner Ports. Gratitude @ahsouza!
+- [#6](https://github.com/BarcaSecurity/bsscan/pull/6): Scanner Ports. Gratitude [@ahsouza](https://github.com/ahsouza)!
+
+
+### Release Notes
+
+Add features for **Windows** platform:
+
+
+- **Get Port Status: OPEN or CLOSED** [only Windows on moment]
+- **Get Status of All Service Ports** [only Windows on moment]
 
 
 <br>
@@ -24,11 +33,11 @@ This is the latest version introduces the use of the module and its features.
 
 ### Features
 
-- [#5](https://github.com/BarcaSecurity/bsscan/pull/5): New Features Successfully. Gratitude @ahsouza!
+- [#5](https://github.com/BarcaSecurity/bsscan/pull/5): New Features Successfully. Gratitude [@ahsouza](https://github.com/ahsouza)!
 
 ### Bug Fixes
 
-- [#4](https://github.com/BarcaSecurity/bsscan/pull/4): Fix bugs. Gratitude @ahsouza!
+- [#4](https://github.com/BarcaSecurity/bsscan/pull/4): Fix bugs. Gratitude [@ahsouza](https://github.com/ahsouza)!
 
 ### Release Notes
 
@@ -37,4 +46,4 @@ Add settings for compiler on **MacOS**, **Linux** and **Windows** platforms:
 
 - **Init** 
 
-This is the initial release of BSSCAN.
+This is the initial release of **BSSCAN**.
