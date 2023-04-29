@@ -27,6 +27,7 @@ namespace bsscan {
   class PORT {
 
     friend std::vector<PORT> getAllPorts();
+    friend std::vector<PORT> getAllPortsOpen();
     public:
       PORT() = default;
       PORT(const std::string& n_number,
@@ -49,5 +50,6 @@ namespace bsscan {
       std::string _s_status;
   };
   std::vector<PORT> getAllPorts();
+  std::vector<PORT> getAllPortsOpen();
 
 };
