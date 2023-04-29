@@ -11,10 +11,12 @@ This is the latest version introduces the use of the module and its features.
 
 <br>
 
-## v0.1.1 [2023-04-28]
+## v0.1.1 [2023-04-29]
 
 ### Features
 
+- [#9](https://github.com/BarcaSecurity/bsscan/pull/8): Scanner All Ports Open & Closed. Gratitude [@ahsouza](https://github.com/ahsouza)!
+- [#8](https://github.com/BarcaSecurity/bsscan/pull/8): Scanner All Ports. Gratitude [@ahsouza](https://github.com/ahsouza)!
 - [#6](https://github.com/BarcaSecurity/bsscan/pull/6): Scanner Ports. Gratitude [@ahsouza](https://github.com/ahsouza)!
 
 
@@ -25,6 +27,7 @@ Add features for **Windows** platform:
 
 - **Get Port Status: OPEN or CLOSED** [only Windows on moment]
 - **Get Status of All Service Ports** [only Windows on moment]
+- **Get All Ports OPEN or CLOSED** [only Windows on moment]
 
 
 <br>
