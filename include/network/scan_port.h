@@ -25,21 +25,29 @@
 namespace bsscan {
 
   class PORT {
-   public:
-    PORT() = default;
-    PORT(const std::string& status,
-        const std::string& service);
-    ~PORT() = default;
 
-    std::string& status(int port);
-    std::string& service(int port);
-  
-    static std::string getStatus(int port);
-    static std::string getService(int port);
+    friend std::vector<PORT> getAllPorts();
+    public:
+      PORT() = default;
+      PORT(const std::string& n_number,
+          const std::string& s_status);
+      ~PORT() = default;
 
-   private:
-    std::string _status;
-    std::string _service;
+      std::string& status(int port);
+      std::string& service(int port);
+    
+      [[nodiscard]] const std::string& n_number() const;
+      [[nodiscard]] const std::string& s_status() const;
+
+      static std::string getStatus(int port);
+      static std::string getService(int port);
+
+    private:
+      std::string _status;
+      std::string _service;
+      std::string _n_number;
+      std::string _s_status;
   };
+  std::vector<PORT> getAllPorts();
 
 };

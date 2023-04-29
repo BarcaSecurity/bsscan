@@ -32,9 +32,9 @@
 
 namespace bsscan {
 
-  PORT::PORT(const std::string& status, const std::string& service )
-      : _status(status), 
-        _service(service) {}
+  PORT::PORT(const std::string& n_number, const std::string& s_status)
+      : _n_number(n_number), 
+        _s_status(s_status) {}
 
   std::string& PORT::status(int port) {
     if (_status.empty()) {
@@ -49,5 +49,8 @@ namespace bsscan {
     }
     return _service;
   }
+
+  const std::string& PORT::n_number() const { return _n_number; }
+  const std::string& PORT::s_status() const { return _s_status; }
 
 };

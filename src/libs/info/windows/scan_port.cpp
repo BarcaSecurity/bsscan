@@ -39,6 +39,30 @@
       return "TODO";
     }
 
-  };
+    std::vector<PORT> getAllPorts() {
+      std::string address = "127.0.0.1";
+      std::string port_list = "1-48556";
+      std::vector<int> new_ports;
+      std::vector<PORT> ports;
+      new_ports = ports_list(port_list);
+      std::cout << "\nScanning...\n " << endl;
+      for (int port : new_ports) {
+        ports.push_back(PORT());
 
+        std::cout << "Port " << port << " : ";
+        if (port_is_open(address, port)) {
+          std::cout << "OPEN\n";
+          ports.back()._s_status = "OPEN";
+          ports.back()._n_number = port;
+        
+        }else {
+          std::cout << "CLOSED\n";
+          ports.back()._s_status = "CLOSED";
+          ports.back()._n_number = port;
+        }
+      }
+
+      return ports;
+    }
+  };
 #endif  // END BSSCAN_WINDOWS
